@@ -78,9 +78,20 @@ class _HomeState extends State<Home> {
     }
   }
 
+  // loadmodel() async {
+  //   await Tflite.loadModel(
+  //       model: "assets/model_unquant.tflite", labels: "assets/labels.txt");
+  // }
+
   loadmodel() async {
+    try {
     await Tflite.loadModel(
-        model: "assets/model_unquant.tflite", labels: "assets/labels.txt");
+      model: "assets/model_unquant.tflite",
+      labels: "assets/labels.txt",
+    );
+  } catch (e) {
+    print("Failed to load model: $e");
+  }
   }
 
   @override
@@ -91,7 +102,7 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
-         Padding(
+          Padding(
             padding: EdgeInsets.all(20),
             child: Container(
               height: MediaQuery.of(context).size.height * 0.7,
@@ -104,7 +115,6 @@ class _HomeState extends State<Home> {
                     ),
             ),
           ),
-
           Text(
             output,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
