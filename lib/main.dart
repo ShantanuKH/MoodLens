@@ -3,9 +3,10 @@ import 'package:emotiondectector/home.dart';
 import 'package:flutter/material.dart';
 
 List<CameraDescription>? cameras;
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+  cameras =
+      await availableCameras(); // In this step we will ensure that all the available cameras are initialize to this list or assign to this list
   runApp(const MyApp());
 }
 
