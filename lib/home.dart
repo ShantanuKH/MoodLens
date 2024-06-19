@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tflite/tflite.dart';
 
 import 'main.dart';
@@ -86,7 +85,7 @@ class _HomeState extends State<Home> {
   loadmodel() async {
     try {
     await Tflite.loadModel(
-      model: "assets/model_unquant.tflite",
+      model: "assets/faces.tflite",
       labels: "assets/labels.txt",
     );
   } catch (e) {

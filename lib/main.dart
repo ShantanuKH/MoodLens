@@ -1,7 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:emotiondectector/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 List<CameraDescription>? cameras;
 void main() async {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: const Home(),
     );
   }
 }
